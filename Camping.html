@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Réservation Camping Sen Yan</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+  <!-- Link Bootstrap CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <style>
+    /* Custom styles (if needed) */
+    body {
+      font-family: 'Montserrat', sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+
+    .mobil-home {
+      margin-bottom: 20px;
+    }
+
+    /* Style header */
+    header {
+      background-color: #4CAF50;
+      color: #fff;
+      padding: 1rem;
+      text-align: center;
+    }
+
+    .navbar-brand {
+      font-size: 2rem;
+    }
+
+    /* Style menu */
+    nav {
+      background-color: #f5f5f5;
+    }
+
+    .navbar-toggler {
+      border: none;
+      background-color: transparent;
+    }
+
+    .navbar-nav .nav-item {
+      margin: 0 10px;
+    }
+
+    .navbar-nav .nav-item .nav-link {
+      color: #4CAF50;
+      font-size: 18px;
+      font-weight: bold;
+    }
+
+    .navbar-nav .nav-item .nav-link:hover {
+      color: #45a049;
+    }
+
+    /* Style main section */
+    main {
+      padding: 2rem;
+    }
+
+    h1, h2, h3 {
+      color: #4CAF50;
+    }
+
+    /* Style mobil-homes section */
+    #mobil-homes .mobil-home {
+      background-color: #f5f5f5;
+      border-radius: 4px;
+      padding: 20px;
+    }
+
+    .mobil-home h3 {
+      font-size: 24px;
+      color: #4CAF50;
+      margin-bottom: 10px;
+    }
+
+    /* Style reservation section */
+    #reservation form {
+      background-color: #f5f5f5;
+      border-radius: 4px;
+      padding: 20px;
+    }
+
+    #reservation form label {
+      font-size: 18px;
+      font-weight: bold;
+    }
+
+    #reservation form input, #reservation form select {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 20px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      font-size: 16px;
+    }
+
+    #reservation form button {
+      background-color: #4CAF50;
+      color: #fff;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 16px;
+      width: 100%;
+      max-width: 300px;
+      margin: 0 auto;
+    }
+
+    #reservation form button:hover {
+      background-color: #45a049;
+    }
+
+    /* Style footer */
+    footer {
+      background-color: #4CAF50;
+      color: #fff;
+      text-align: center;
+      padding: 1rem;
+    }
+
+    /* Style modal recapitulatif */
+    .modal-body p {
+      font-weight: bold;
+    }
+
+    .promo-price {
+      font-size: 24px;
+      color: #e74c3c; /* Couleur rouge */
+    }
+
+    .badge.promo-badge {
+      font-size: 16px;
+      background-color: #e74c3c; /* Couleur rouge */
+      padding: 4px 8px;
+      border-radius: 4px;
+    }
+
+    .badge.prom0-badge {
+      font-size: 16px;
+      background-color: #e78c3c; /* Couleur rouge */
+      padding: 4px 8px;
+      border-radius: 4px;
+    }
+
+    /* Media queries for mobile devices */
+    @media (max-width: 768px) {
+      .navbar-nav {
+        text-align: center;
+      }
+
+      .mobil-home .media {
+        display: flex;
+        flex-direction: column;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container">
+      <!-- Logo -->
+      <a class="navbar-brand" href="#">
+        <img src="https://s2.qwant.com/thumbr/0x380/4/a/bc2542e906e0cfa73bd4cee4ffffdaa223b429c39d0a5a1abb1ef3c7ac6e15/cropped-logo-sen-yan-1.png?u=https%3A%2F%2Fanimationssenyan.files.wordpress.com%2F2019%2F11%2Fcropped-logo-sen-yan-1.png%3Fw%3D768&q=0&b=1&p=0&a=0" alt="Camping Sen Yan Logo">
+      </a>
+      <nav class="navbar navbar-expand-lg">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav mx-auto">
+            <li class="nav-item"><a class="nav-link" href="#accueil">Accueil</a></li>
+            <li class="nav-item"><a class="nav-link" href="#mobil-homes">Mobil-homes</a></li>
+            <li class="nav-item"><a class="nav-link" href="#reservation">Réserver</a></li>
+          </ul>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container py-4">
+    <section id="accueil">
+      <h2>Bienvenue au Camping Sen Yan ⭐⭐⭐⭐⭐</h2>
+      <p>
+        Bienvenue sur notre site de réservation. Profitez de vacances relaxantes dans notre camping
+        entouré par la nature et proche de magnifiques plages.
+      </p>
+    </section>
+
+    <section id="mobil-homes">
+      <h2>Mobil-homes</h2>
+      <p>
+        Découvrez nos mobil-homes confortables pour passer des vacances inoubliables au sein de notre Village Tropical ! 
+      </p>
+      <div class="mobil-home">
+        <div class="media">
+          <i class="fas fa-home mr-3 fa-2x text-success"></i>
+          <div class="media-body">
+            <h3 class="mt-0">Mobil-home Standard</h3>
+            <p>Le mobil-home Standard est équipé de tout le nécessaire pour votre séjour au Sen Yan</p>
+            <p>Prix de caution : <b>500€</b></p>
+            <p><strong>Tarif/semaine :</strong> 1050€  <span class="badge badge-success prom0-badge">Indisponible</span></p>
+            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modalStandard">Plus d'informations</button>
+            <button type="button" class="btn btn-success" data-toggle="modal" data-target="#modalContactStandard"><del>Réserver ce mobil-home<del></button>
+          </div>
+        </div>
+      </div>
+      <div class="mobil-home">
+        <div class="media">
+          <i class="fas fa-star mr-3 fa-2x text-success"></i>
+          <div class="media-body">
+            <h3 class="mt-0">Mobil-home de Jean et Cathy</h3>
+            <p>Profitez d'un séjour de luxe dans notre mobil-home de qualité avec protection par chien de garde, deux grands frigos pour l'apéro et pleins d'autres surprises.</p>
+            <p>Prix de caution : <b>500€</b></p>
+            <p><strong>Tarif/semaine :</strong> <span class="original-price"><del>1700€</del></span> <span class="promo-price">1400€</span> <span class="badge badge-success promo-badge">Promo</span></p>
+            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modalDeluxe">Plus d'informations</button>
+            <button type="button" class="btn btn-success" data-toggle="modal" data-target="#modalContactDeluxe">Réserver ce mobil-home</button>
+          </div>
+        </div>
+      </div>
+      <!-- Ajoutez d'autres types de mobil-homes ici -->
+    </section>
+
+    <section id="reservation">
+      <h2>Réserver un Mobil-home</h2>
+      <form id="reservation-form">
+        <div class="form-group">
+          <label for="nom">Nom :</label>
+          <input type="text" class="form-control" id="nom" required>
+        </div>
+
+        <div class="form-group">
+          <label for="email">Email :</label>
+          <input type="email" class="form-control" id="email" required>
+        </div>
+
+        <div class="form-group">
+          <label for="type_mobil_home">Type de Mobil-home :</label>
+          <select class="form-control" id="type_mobil_home" required>
+            <option value="" disabled selected>Sélectionnez le type</option>
+            <option value="standard">Mobil-home Standard</option>
+            <option value="deluxe">Mobil-home Deluxe</option>
+            <!-- Ajoutez d'autres options pour les autres types de mobil-homes ici -->
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="date_arrivee">Date d'arrivée :</label>
+          <input type="date" class="form-control" id="date_arrivee" required>
+        </div>
+
+        <div class="form-group">
+          <label for="nombre_nuits">Nombre de nuits :</label>
+          <input type="number" class="form-control" id="nombre_nuits" required>
+        </div>
+
+        <button type="button" class="btn btn-success" data-toggle="modal" data-target="#reservationModal">
+          <i class="fas fa-check mr-2"></i> Réserver
+        </button>
+      </form>
+    </section>
+  </main>
+
+  <footer>
+    <p>Contactez-nous : <b>playmobile59@gmail.com</b></p>
+    <p>OU</p>
+    <p><b>isaboule@gmail.com</b></p>
+  </footer>
+
+  <!-- Modal pour les informations du Mobil-home Standard -->
+  <div class="modal fade" id="modalStandard" tabindex="-1" role="dialog" aria-labelledby="modalStandardLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="modalStandardLabel">Mobil-home Standard </h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <p><i class="fas fa-bed"></i> Lit double</p>
+          <p><i class="fas fa-bed"></i> Lits simples</p>
+          <p><i class="fas fa-bath"></i> Salle de bain privée</p>
+          <p><i class="fas fa-utensils"></i> Cuisine équipée</p>
+          <p><i class="fas fa-wifi"></i> Accès Internet</p>
+          <p>Le mobil-home Standard est équipé de tout le nécessaire pour votre séjour au Sen Yan.</p>
+          <p>Prix de caution : <b>500€</b></p>  
+          <p><strong>Tarif/semaine :</strong> 1050€ <span class="badge badge-success prom0-badge">Indisponible</span></p></p> 
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Fermer</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal pour les informations du Mobil-home Deluxe -->
+  <div class="modal fade" id="modalDeluxe" tabindex="-1" role="dialog" aria-labelledby="modalDeluxeLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="modalDeluxeLabel">Mobil-home de Jean et Cathy</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <p><i class="fas fa-bed"></i> Lit double king-size</p>
+          <p><i class="fas fa-bed"></i> Lits queen-size</p>
+          <p><i class="fas fa-bath"></i> Salle de bain privée avec jacuzzi</p>
+          <p><i class="fas fa-utensils"></i> Cuisine de chef entièrement équipée</p>
+          <p><i class="fas fa-wifi"></i> Accès Internet haut débit</p>
+          <p><i class="fas fa-swimming-pool"></i> Piscine privée</p>
+          <p>Profitez d'un séjour de luxe dans notre mobil-home de qualité avec protection par chien de garde, deux grands frigos pour l'apéro et pleins d'autres surprises.</p>
+          <p>Prix de caution : <b>500€</b></p>
+          <p><strong>Tarif/semaine :</strong> <span class="original-price"><del>1700€</del></span> <span class="promo-price">1400€</span> <span class="badge badge-success promo-badge">Promo</span></p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Fermer</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modals pour les contacts des propriétaires -->
+  <div class="modal fade" id="modalContactStandard" tabindex="-1" role="dialog" aria-labelledby="modalContactStandardLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="modalContactStandardLabel">Comment réserver le Mobil-home Standard</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <p>Pour réserver le Mobil-home Standard, veuillez contacter le propriétaire Jean Louis par téléphone au <strong>01 23 45 67 89</strong> ou par email à l'adresse <strong>jeanlouis@example.com</strong>.</p>
+          <p>Merci de préciser la période souhaitée et toutes les informations nécessaires pour la réservation.</p>
+          <span class="badge badge-success prom0-badge">Indisponible</span></p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Fermer</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="modal fade" id="modalContactDeluxe" tabindex="-1" role="dialog" aria-labelledby="modalContactDeluxeLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="modalContactDeluxeLabel">Comment réserver le Mobil-home de Jean et Cathy</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <p>Pour réserver le Mobil-home de Jean et Cathy, veuillez contacter le propriétaire Jean Louis par téléphone au <strong>01 98 76 54 32</strong> ou par email à l'adresse <strong>jeanlouis@example.com</strong>.</p>
+          <p>Merci de préciser la période souhaitée et toutes les informations nécessaires pour la réservation.</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Fermer</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Link Bootstrap JS and jQuery -->
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+  <script>
+    // Function to handle the reservation form submission
+    function handleReservation() {
+      const name = document.getElementById('nom').value;
+      const email = document.getElementById('email').value;
+      const type = document.getElementById('type_mobil_home').value;
+      const arrivalDate = document.getElementById('date_arrivee').value;
+      const numNights = document.getElementById('nombre_nuits').value;
+
+      // Do something with the form data (e.g., send it to a server)
+      console.log('Reservation Details:');
+      console.log('Name:', name);
+      console.log('Email:', email);
+      console.log('Mobil-home Type:', type);
+      console.log('Arrival Date:', arrivalDate);
+      console.log('Number of Nights:', numNights);
+
+      // Show a success message (you can customize this according to your needs)
+      alert('Votre réservation a été enregistrée avec succès ! Nous vous contacterons bientôt.');
+
+      // Reset the form after successful submission
+      document.getElementById('reservation-form').reset();
+    }
+
+    // Attach the handleReservation function to the reservation button click event
+    document.getElementById('reservation-form').addEventListener('submit', function (event) {
+      event.preventDefault(); // Prevent the default form submission behavior
+      handleReservation();
+    });
+  </script>
+</body>
+</html>
